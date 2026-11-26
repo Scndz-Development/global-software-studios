@@ -1,0 +1,27 @@
+Global Software Studios — Project brief
+
+A starting point for a conversation. Fill in what you know.
+
+Your name / organization:
+Preferred contact details:
+
+What problem are you trying to solve?
+
+Who will use the product?
+
+What exists today (idea, designs, website or application)?
+
+What would a useful first version do?
+
+Where do you need help (discovery, UI/UX, web, mobile, review)?
+
+Are there technical requirements or integrations?
+
+Do you have a target timeline or budget range?
+
+What would success look like?
+
+Contact: https://github.com/knightndgale
+Website: https://globalsoftwarestudios.com/
+
+This template is a local download. It does not submit or send information.

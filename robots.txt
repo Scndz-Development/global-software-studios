@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://globalsoftwarestudios.com/sitemap.xml
