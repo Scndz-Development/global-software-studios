@@ -78,3 +78,11 @@ GitHub approved the certificate for `globalsoftwarestudios.com` and `www.globals
 Added a transparent globe mark isolated from the owner’s supplied reference to site headers, the home footer, favicon and Organization metadata. Kept the reference’s raster wordmark out of the asset. Added the supplied Cyprus address to the contact section, all existing footers, legal contact details, downloadable brief and PostalAddress schema, with map links. Public pages use Email us links/buttons instead of displaying either recipient address. Knight’s email remains the primary form endpoint and Jay remains CC. Updated response and consent copy to name Knight and Jay.
 
 Validation: 12 mocked inquiry checks passed; SEO/security checks passed with the regenerated schema CSP hash. Checked visible page text for raw recipient addresses, footer address coverage, mailto destinations, native/AJAX form recipients and logo resource references. Browser activity interrupted local visual QA, so no new desktop/mobile screenshot was verified in this revision. No real inquiry was sent.
+
+## Favicon and navigation logo sizing — 2026-11-27
+
+Added a root multi-size favicon.ico (16/32/48), explicit 16/32px PNG favicon links and a 180px Apple touch icon using the existing globe artwork. All six HTML pages reference the icons with a new cache version. Navigation globe is reduced from 56px to 36px (32px on mobile), with tighter spacing; footer globe is set to 40px in the redesigned footer. Verified icon file signatures, dimensions, alpha, ICO frame entries, link targets and CSS scope.
+
+## Footer hierarchy refinement — 2026-11-27
+
+Replaced the repeated full-width footer rows with a three-column brand/contact/address grid and one compact copyright/legal row on all five pages with footers. Mobile stacks those sections and keeps project/email actions together. Removed the requested receiver sentence below the form submit button. Verified the desktop and 375px mobile layouts in Brave, including the smaller navigation mark and loaded tab favicon; saved screenshots. The Start a project link navigated to the contact section. Browser console messages were extension warnings and blocked local DevTools discovery requests; no application-code error was observed. Temporary device emulation and DevTools were closed after QA.
