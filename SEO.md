@@ -8,7 +8,7 @@ Current public base: https://globalsoftwarestudios.com/
 
 - Unique page titles and descriptions, with software development and UI/UX language grounded in the site's actual services.
 - Self-referencing canonical URLs that use the configured custom domain.
-- Organization, WebSite and WebPage JSON-LD on the home page. No invented logo, legal registration, location, ratings, awards or project results are claimed.
+- Organization, WebSite and WebPage JSON-LD on the home page. The Organization schema includes the owner-supplied globe mark and Cyprus postal address. No legal registration, ratings, awards or project results are invented.
 - Complete Open Graph and Twitter metadata, including a locally hosted 1200×630 social image and descriptive alternative text.
 - An XML sitemap listing the home, terms, privacy and credits pages. Confirmation and error pages have `noindex` metadata and are excluded from the sitemap.
 - Semantic headings, descriptive images, internal legal-page navigation, responsive images, local WOFF2 fonts and crawlable HTML content.

@@ -34,11 +34,11 @@ The repository is owned by **Scndz-Development**, with its original history pres
 
 Project cards and all general copy live in `index.html`. Expanded project descriptions live in `script.js`; update both the cards and their matching dialog definitions when scope changes. The no-JavaScript overviews at the end of `index.html` should also stay aligned.
 
-The portfolio uses PNTZE’s supplied wordmark and SCNDZ’s source stacked wordmark, with custom background illustrations. CFS uses a text identifier because its available design materials do not contain separate logo artwork. The studio name is text only; no company logo is claimed. Project status is explicitly ongoing. No internal documents, private chat URLs or repository implementation details are published.
+The portfolio uses PNTZE’s supplied wordmark and SCNDZ’s source stacked wordmark, with custom background illustrations. CFS uses a text identifier because its available design materials do not contain separate logo artwork. The studio uses the owner-supplied globe mark without the reference image’s wordmark, alongside accessible HTML brand text. The company address appears in the contact section, footers and legal contact details. Project status is explicitly ongoing. No internal documents, private chat URLs or repository implementation details are published.
 
 ### Contact
 
-The inquiry form sends to `knightndgale@gmail.com` with `jay.sterling@globalsoftwarestudios.com` copied through FormSubmit. Visitor email is the Reply-To address. The form validates locally, blocks duplicate clicks while sending and preserves entries after delivery errors or activation requirements. An email-app fallback addresses both recipients.
+The inquiry form sends to `knightndgale@gmail.com` with `jay.sterling@globalsoftwarestudios.com` copied through FormSubmit. Visitor email is the Reply-To address. The form validates locally, blocks duplicate clicks while sending and preserves entries after delivery errors or activation requirements. The public Email us buttons open Jay’s company email; the inquiry form continues to deliver to both recipients.
 
 The hosted endpoint requires one-time activation by the primary recipient before it can deliver submissions. See `INQUIRY-SETUP.md`. No email passwords, API keys or private SMTP credentials are embedded in the source.
 

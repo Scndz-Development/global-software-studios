@@ -40,7 +40,7 @@ for filename,(title,desc,indexable) in pages.items():
  structured=''
  if filename=='index.html':
   graph={'@context':'https://schema.org','@graph':[
-   {'@type':'Organization','@id':base+'#organization','name':name,'url':base,'description':description,'email':config['primary_email'],'contactPoint':[{'@type':'ContactPoint','contactType':'project inquiries','email':config['primary_email']},{'@type':'ContactPoint','contactType':'project inquiries','email':config['cc_email']}]},
+   {'@type':'Organization','@id':base+'#organization','name':name,'url':base,'description':description,'email':config['public_email'],'logo':{'@type':'ImageObject','url':base+config['logo'],'width':256,'height':256},'address':{'@type':'PostalAddress',**config['address']},'contactPoint':[{'@type':'ContactPoint','contactType':'project inquiries','email':config['public_email']}]},
    {'@type':'WebSite','@id':base+'#website','url':base,'name':name,'publisher':{'@id':base+'#organization'},'inLanguage':'en'},
    {'@type':'WebPage','@id':base+'#webpage','url':base,'name':title,'description':desc,'isPartOf':{'@id':base+'#website'},'about':{'@id':base+'#organization'},'inLanguage':'en'}]}
   structured=json.dumps(graph,ensure_ascii=False,separators=(',',':'))
@@ -72,7 +72,7 @@ for filename,(title,desc,indexable) in pages.items():
 <meta name="twitter:image" content="{base}assets/social-card.png">
 <meta name="twitter:image:alt" content="Global Software Solution — software development and UI/UX design">
 '''
- # No physical location or invented logo/awards are claimed by the structured data.
+ # Logo and postal address use the company details supplied by the owner.
  if structured:metadata+='<script type="application/ld+json">'+structured+'</script>\n'
  s=s.replace('</head>',metadata+'</head>')
  if filename=='index.html':

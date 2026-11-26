@@ -72,3 +72,9 @@ Namecheap DNS configured: `www` CNAME points to `scndz-development.github.io`; t
 ## HTTPS activation — 2026-11-27
 
 GitHub approved the certificate for `globalsoftwarestudios.com` and `www.globalsoftwarestudios.com`. Enabled HTTPS enforcement through the Pages API and verified `https_enforced: true`. The root HTTPS URL returned HTTP 200 with certificate verification enabled.
+
+## Globe identity, postal address and public contact — 2026-11-27
+
+Added a transparent globe mark isolated from the owner’s supplied reference to site headers, the home footer, favicon and Organization metadata. Kept the reference’s raster wordmark out of the asset. Added the supplied Cyprus address to the contact section, all existing footers, legal contact details, downloadable brief and PostalAddress schema, with map links. Public pages use Email us links/buttons instead of displaying either recipient address. Knight’s email remains the primary form endpoint and Jay remains CC. Updated response and consent copy to name Knight and Jay.
+
+Validation: 12 mocked inquiry checks passed; SEO/security checks passed with the regenerated schema CSP hash. Checked visible page text for raw recipient addresses, footer address coverage, mailto destinations, native/AJAX form recipients and logo resource references. Browser activity interrupted local visual QA, so no new desktop/mobile screenshot was verified in this revision. No real inquiry was sent.

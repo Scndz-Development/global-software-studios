@@ -217,16 +217,16 @@
       });
       const result = await response.json();
       if (/activat|confirm your email|check your email/i.test(result.message || '')) {
-        showFeedback('error', 'Email delivery is awaiting a one-time activation by the studio. Your message is still here. Please use “Email both of us” above to send it now.');
+        showFeedback('error', 'Email delivery is awaiting a one-time activation by the studio. Your message is still here. Please use “Email us” above to send it now.');
         return;
       }
       if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('service');
       form.reset();
-      showFeedback('success', 'Thank you. Your inquiry has been accepted by our email service for Mark and Jay. We’ll reply to the email address you provided.');
+      showFeedback('success', 'Thank you. Your inquiry has been accepted by our email service for Knight and Jay. We’ll reply to the email address you provided.');
     } catch (error) {
       showFeedback('error', error.name === 'AbortError'
-        ? 'The email service took too long to respond, so delivery could not be confirmed. Your details are still here. Please email both of us directly, or try again later.'
-        : 'We couldn’t confirm that your inquiry was sent. Your details are still here. Please check your connection and try again, or use “Email both of us” above.');
+        ? 'The email service took too long to respond, so delivery could not be confirmed. Your details are still here. Please email the studio directly, or try again later.'
+        : 'We couldn’t confirm that your inquiry was sent. Your details are still here. Please check your connection and try again, or use “Email us” above.');
     } finally {
       clearTimeout(timeout);
       sending = false;

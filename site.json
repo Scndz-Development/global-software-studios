@@ -3,5 +3,13 @@
   "base_url": "https://globalsoftwarestudios.com/",
   "custom_domain": "globalsoftwarestudios.com",
   "primary_email": "knightndgale@gmail.com",
-  "cc_email": "jay.sterling@globalsoftwarestudios.com"
+  "cc_email": "jay.sterling@globalsoftwarestudios.com",
+  "public_email": "jay.sterling@globalsoftwarestudios.com",
+  "address": {
+    "streetAddress": "Spyrou Kyprianou Ave 120, Mesa Geitonia",
+    "addressLocality": "Lemesos",
+    "postalCode": "4009",
+    "addressCountry": "CY"
+  },
+  "logo": "assets/company-globe.png"
 }
