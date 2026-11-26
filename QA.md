@@ -58,3 +58,7 @@ Provider acceptance is kept distinct from confirmed inbox arrival. Error, timeou
 ## PNTZE logo presentation refinement
 
 Removed the pink card background and inset white badge. The logo now sits centered on a single white surface, with clear space and its original aspect ratio. The source PNG is unchanged. Verified in Brave on desktop and at 375px: no horizontal overflow, transparent wrapper background, loaded asset and zero horizontal/vertical center offset.
+
+## Company email update
+
+Replaced Jay’s old address with jay.sterling@globalsoftwarestudios.com in AJAX and native form delivery, direct email links, contact metadata, privacy/terms text and project brief. Added a direct email link in the footer and clarified the contact section heading. All 12 mocked inquiry checks and 86 SEO/security checks passed, including the refreshed structured-data CSP hash. Browser access was unavailable in this chat; no visual recheck or real email delivery test was performed.

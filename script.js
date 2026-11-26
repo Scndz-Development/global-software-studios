@@ -198,7 +198,7 @@
       company:form.elements.namedItem('company').value.trim().slice(0,150),
       service:fields.service.value,message:fields.message.value.trim(),
       consent:'accepted',terms_version:'2026-11-26',
-      _cc:'jay.sterling@mail.com',_subject:'New project inquiry — Global Software Solution',
+      _cc:'jay.sterling@globalsoftwarestudios.com',_subject:'New project inquiry — Global Software Solution',
       _template:'table',_honey:'',_replyto:fields.email.value.trim(),
       _url:location.origin + location.pathname
     };

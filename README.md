@@ -38,7 +38,7 @@ The portfolio uses PNTZE’s supplied wordmark and SCNDZ’s source stacked word
 
 ### Contact
 
-The inquiry form sends to `knightndgale@gmail.com` with `jay.sterling@mail.com` copied through FormSubmit. Visitor email is the Reply-To address. The form validates locally, blocks duplicate clicks while sending and preserves entries after delivery errors or activation requirements. An email-app fallback addresses both recipients.
+The inquiry form sends to `knightndgale@gmail.com` with `jay.sterling@globalsoftwarestudios.com` copied through FormSubmit. Visitor email is the Reply-To address. The form validates locally, blocks duplicate clicks while sending and preserves entries after delivery errors or activation requirements. An email-app fallback addresses both recipients.
 
 The hosted endpoint requires one-time activation by the primary recipient before it can deliver submissions. See `INQUIRY-SETUP.md`. No email passwords, API keys or private SMTP credentials are embedded in the source.
 

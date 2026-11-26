@@ -3,7 +3,7 @@
 ## Routing
 
 - To: **knightndgale@gmail.com**
-- CC: **jay.sterling@mail.com**
+- CC: **jay.sterling@globalsoftwarestudios.com**
 - Reply-To: the visitor's validated email address.
 - Subject: **New project inquiry — Global Software Solution**.
 - Provider: [FormSubmit](https://formsubmit.co/), a hosted form-to-email endpoint. GitHub Pages still hosts static files only. There is no Node server or email password in the source.

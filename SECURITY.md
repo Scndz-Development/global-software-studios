@@ -2,7 +2,7 @@
 
 ## Reporting a concern
 
-Contact **knightndgale@gmail.com**, copying **jay.sterling@mail.com**, with a description of the issue and steps to reproduce it. Do not post credentials, private inquiries or personal information in a public issue. Please avoid disruptive tests against the live site or its providers.
+Contact **knightndgale@gmail.com**, copying **jay.sterling@globalsoftwarestudios.com**, with a description of the issue and steps to reproduce it. Do not post credentials, private inquiries or personal information in a public issue. Please avoid disruptive tests against the live site or its providers.
 
 ## Implemented controls
 
