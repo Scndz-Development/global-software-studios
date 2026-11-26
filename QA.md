@@ -62,3 +62,7 @@ Removed the pink card background and inset white badge. The logo now sits center
 ## Company email update
 
 Replaced Jay’s old address with jay.sterling@globalsoftwarestudios.com in AJAX and native form delivery, direct email links, contact metadata, privacy/terms text and project brief. Added a direct email link in the footer and clarified the contact section heading. All 12 mocked inquiry checks and 86 SEO/security checks passed, including the refreshed structured-data CSP hash. Browser access was unavailable in this chat; no visual recheck or real email delivery test was performed.
+
+## Custom domain configuration
+
+Configured `globalsoftwarestudios.com` in CNAME and regenerated canonical, social, structured-data, sitemap, robots, 404 and inquiry return URLs. The structured-data CSP hash was refreshed. All 12 mocked inquiry checks and 87 SEO/security checks passed for the domain root deployment. DNS and HTTPS activation require separate live verification.

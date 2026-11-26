@@ -2,12 +2,12 @@
 
 Business name: **Global Software Solution**.
 
-Current public base: https://scndz-development.github.io/global-software-studios/
+Current public base: https://globalsoftwarestudios.com/
 
 ## Implemented
 
 - Unique page titles and descriptions, with software development and UI/UX language grounded in the site's actual services.
-- Self-referencing canonical URLs that match the live organization Pages address. They no longer point at an unconfigured custom domain.
+- Self-referencing canonical URLs that use the configured custom domain.
 - Organization, WebSite and WebPage JSON-LD on the home page. No invented logo, legal registration, location, ratings, awards or project results are claimed.
 - Complete Open Graph and Twitter metadata, including a locally hosted 1200×630 social image and descriptive alternative text.
 - An XML sitemap listing the home, terms, privacy and credits pages. Confirmation and error pages have `noindex` metadata and are excluded from the sitemap.
@@ -16,7 +16,7 @@ Current public base: https://scndz-development.github.io/global-software-studios
 
 ## Search Console and custom domain
 
-Indexing and ranking are controlled by search engines; metadata does not guarantee either. The owner can verify a URL-prefix property in Google Search Console and submit `https://scndz-development.github.io/global-software-studios/sitemap.xml`.
+Indexing and ranking are controlled by search engines; metadata does not guarantee either. The owner can verify a URL-prefix property in Google Search Console and submit `https://globalsoftwarestudios.com/sitemap.xml`.
 
 GitHub project Pages serves this repository below a path. Its `robots.txt` is therefore below that path too; crawlers normally request robots.txt at the host root, which this repository does not control. The supplied file becomes the root robots.txt when a custom domain is attached. The live HTML robots tags and directly submitted sitemap work independently of that file.
 
