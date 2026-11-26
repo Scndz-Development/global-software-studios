@@ -111,3 +111,118 @@
     previousFocus?.focus({preventScroll: true});
   });
 })();
+
+/* Inquiry delivery uses a hosted form endpoint; no server or credentials are shipped. */
+(() => {
+  'use strict';
+  const form = document.querySelector('#inquiry-form');
+  if (!form) return;
+  const feedback = document.querySelector('#inquiry-feedback');
+  const submit = form.querySelector('button[type="submit"]');
+  const fields = {
+    name: form.elements.namedItem('name'),
+    email: form.elements.namedItem('email'),
+    service: form.elements.namedItem('service'),
+    message: form.elements.namedItem('message')
+  };
+  let sending = false;
+  const errorFor = (name) => {
+    const field = fields[name];
+    const value = field.value.trim();
+    if (!value) return {name:'Enter your name.',email:'Enter your email address.',service:'Choose the support you need.',message:'Tell us a little about your project.'}[name];
+    if (name === 'email' && !field.validity.valid) return 'Enter a valid email address, such as name@example.com.';
+    if (name === 'message' && value.length < 20) return 'Add a little more detail (at least 20 characters).';
+    return '';
+  };
+  const showFieldError = (name, message) => {
+    const target = document.querySelector(`#${name}-error`);
+    target.textContent = message;
+    if (message) fields[name].setAttribute('aria-invalid', 'true');
+    else fields[name].removeAttribute('aria-invalid');
+  };
+  const showFeedback = (state, message) => {
+    feedback.replaceChildren(document.createTextNode(message));
+    feedback.dataset.state = state;
+    feedback.hidden = false;
+    feedback.focus();
+  };
+  Object.entries(fields).forEach(([name, field]) => {
+    field.addEventListener('input', () => {
+      if (field.hasAttribute('aria-invalid')) showFieldError(name, errorFor(name));
+    });
+    field.addEventListener('change', () => {
+      if (field.hasAttribute('aria-invalid')) showFieldError(name, errorFor(name));
+    });
+  });
+  document.querySelectorAll('[data-inquiry-service]').forEach(button => {
+    button.addEventListener('click', () => {
+      fields.service.value = button.dataset.inquiryService;
+      showFieldError('service', '');
+      document.querySelector('#contact').scrollIntoView({behavior:'instant'});
+      fields.name.focus({preventScroll: true});
+    });
+  });
+  // The normal HTML POST is the fallback when fetch or FormData is unavailable.
+  if (!window.fetch || !window.FormData || !window.AbortController) return;
+  form.noValidate = true;
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (sending) return;
+    const errors = Object.keys(fields).map(name => ({name,message:errorFor(name)}));
+    errors.forEach(({name,message}) => showFieldError(name,message));
+    const invalid = errors.filter(({message}) => message);
+    if (invalid.length) {
+      showFeedback('error', 'Please check the following fields before sending:');
+      const list = document.createElement('ul');
+      invalid.forEach(({name,message}) => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${fields[name].id}`;
+        link.textContent = message;
+        link.addEventListener('click', e => {e.preventDefault();fields[name].focus();});
+        item.append(link);list.append(item);
+      });
+      feedback.append(list);
+      return;
+    }
+    if (form.elements.namedItem('_honey').value) {
+      showFeedback('error', 'This request could not be processed. Please use the email link to contact us.');
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form).entries());
+    Object.keys(fields).forEach(name => {data[name] = fields[name].value.trim();});
+    data._replyto = data.email;
+    data._url = location.href.split('#')[0];
+    sending = true;
+    submit.disabled = true;
+    submit.textContent = 'Sending inquiry…';
+    form.setAttribute('aria-busy', 'true');
+    feedback.hidden = true;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/knightndgale@gmail.com', {
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data),signal:controller.signal
+      });
+      const result = await response.json();
+      if (/activat|confirm your email|check your email/i.test(result.message || '')) {
+        showFeedback('error', 'Email delivery is awaiting a one-time activation by the studio. Your message is still here. Please use “Email both of us” above to send it now.');
+        return;
+      }
+      if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('service');
+      form.reset();
+      showFeedback('success', 'Thank you. Your inquiry has been accepted by our email service for Mark and Jay. We’ll reply to the email address you provided.');
+    } catch (error) {
+      showFeedback('error', error.name === 'AbortError'
+        ? 'The email service took too long to respond, so delivery could not be confirmed. Your details are still here. Please email both of us directly, or try again later.'
+        : 'We couldn’t confirm that your inquiry was sent. Your details are still here. Please check your connection and try again, or use “Email both of us” above.');
+    } finally {
+      clearTimeout(timeout);
+      sending = false;
+      submit.disabled = false;
+      submit.textContent = 'Send inquiry';
+      form.removeAttribute('aria-busy');
+    }
+  });
+})();

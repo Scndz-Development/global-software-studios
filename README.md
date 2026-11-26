@@ -1,4 +1,4 @@
-# Global Software Studios
+# Global Software Solutions Studio
 
 A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain HTML, CSS and JavaScript; no Node.js, package installation, database, server or build step is needed for hosting.
 
@@ -6,10 +6,13 @@ A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain 
 
 - `index.html` — studio home, portfolio, services, process, FAQ and contact.
 - `styles.css` — responsive layouts, focus states, reduced-motion and print styles.
-- `script.js` — mobile navigation and accessible native project dialogs.
+- `script.js` — mobile navigation, accessible project dialogs and inquiry validation/delivery.
 - `credits.html` — photography/font attribution and privacy information.
 - `404.html` — custom not-found page.
-- `assets/` — self-hosted photos, fonts, brand mark, social card and brief template.
+- `thank-you.html` — fallback confirmation page after FormSubmit accepts an HTML form submission.
+- `INQUIRY-SETUP.md` — recipients, provider activation and delivery checks.
+- `RESEARCH.md` — primary-source benchmarks and how they informed this revision.
+- `assets/` — self-hosted photos, fonts, source project wordmarks, social card and brief template.
 - `.nojekyll` — serves the source files directly on GitHub Pages.
 - `CNAME.example` — domain value to use when connecting the domain.
 - `DEPLOYMENT.md` — exact GitHub Pages and DNS setup.
@@ -27,11 +30,14 @@ The custom domain is deliberately not activated until DNS is ready, so the GitHu
 
 Project cards and all general copy live in `index.html`. Expanded project descriptions live in `script.js`; update both the cards and their matching dialog definitions when scope changes. The no-JavaScript overviews at the end of `index.html` should also stay aligned.
 
-The portfolio uses custom concept illustrations, not screenshots or official client logos. Project status is explicitly ongoing. No internal documents, private chat URLs or repository implementation details are published.
+The portfolio uses PNTZE’s supplied wordmark and SCNDZ’s source stacked wordmark, with custom background illustrations. CFS uses a text identifier because its available design materials do not contain separate logo artwork. The studio name is text only; no company logo is claimed. Project status is explicitly ongoing. No internal documents, private chat URLs or repository implementation details are published.
 
 ### Contact
 
-The current call to action opens Mark's GitHub profile because a business email has not yet been supplied. To switch to email, change the `.contact-link` href to `mailto:YOUR_ADDRESS`, set its visible text to `Start a conversation`, update `.contact-caption`, and update the contact line in `assets/project-brief.txt`. There is no form that pretends to submit data.
+The inquiry form sends to `knightndgale@gmail.com` with `jay.sterling@mail.com` copied through FormSubmit. Visitor email is the Reply-To address. The form validates locally, blocks duplicate clicks while sending and preserves entries after delivery errors or activation requirements. An email-app fallback addresses both recipients.
+
+The hosted endpoint requires one-time activation by the primary recipient before it can deliver submissions. See `INQUIRY-SETUP.md`. No email passwords, API keys or private SMTP credentials are embedded in the source.
+
 
 ### Fonts and photographs
 

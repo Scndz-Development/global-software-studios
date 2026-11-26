@@ -1,31 +1,44 @@
-# QA record — 26 November 2026
+# QA record — 26 November 2026 revision
 
-## Verified locally in Brave (Chromium)
+## Branding and project assets
 
-- Responsive widths: 320, 375, 620, 768, 1024 and 1440 CSS pixels. Document width matched viewport width at each size; no horizontal overflow. All photo and brand assets loaded.
-- Desktop hero and portfolio, mobile hero and modal, contact/FAQ and credits were visually reviewed.
-- Mobile menu opens, exposes navigation, closes on section selection, and updates `aria-expanded`.
-- PNTZE, SCNDZ and CFS links open the correct overview. Close control and Escape dismiss them, body scrolling is restored, and focus returns to the invoking project link.
-- Forward and reverse keyboard focus wrap inside the modal. An explicit focus-cycle handler was added after the reverse-tab check exposed browser-chrome focus behavior.
-- All four native FAQ disclosures expand and display their answers.
-- Project brief link invokes a browser save dialog; the 679-byte `project-brief.txt` download completed and was saved to the local QA folder.
-- Credits navigation loads its page. All site resource and local link targets respond over HTTP.
-- No browser console errors or warnings were returned in the tested session.
+- Business name updated to **Global Software Solutions Studio** across the header, footer, page titles, metadata, social share image, brief and documentation. The supplied `globalsoftwarestudios.com` domain and existing GitHub repository are retained.
+- Removed the invented company icon and hero monogram. The business name is presented as plain text.
+- PNTZE uses its supplied pink-terminal wordmark exported from the existing design reference, without redrawing the lettering.
+- SCNDZ uses the application source's stacked SC / ND / Z wordmark, orange dot and Oswald typeface. CFS has no separate logo artwork in the available source and remains a text identifier.
+- Fonts and photos are self-hosted. Font licenses and asset provenance are documented in the credits page.
 
-## Static validation
+## Inquiry behavior: ten automated tests passed
 
-- JavaScript syntax passes `node --check` (Node is used only as a development syntax checker; the website has no Node dependency).
-- 52 local structure/link/resource/HTTP checks passed: unique IDs, one h1 per page, language declarations, image alternatives, accessible button names, new-tab security attributes, hash targets and local assets.
-- Core text contrast ratios range from **5.57:1 to 15.50:1**, exceeding WCAG AA's normal-text minimum for those tested solid-color pairs. Text over photography uses dark gradient overlays and was visually reviewed; this is not an exhaustive accessibility certification.
-- Images are responsive WebP with declared dimensions. The below-the-fold photograph is lazy-loaded. Fonts use WOFF2 with `font-display: swap`.
-- The entire website is approximately 305 KB before Git metadata and documentation updates, including both photo sizes, both fonts and the share image.
-- No third-party runtime scripts, remote fonts, analytics, cookies or form-processing dependencies.
-- Reduced-motion CSS disables transitions and smooth scrolling. Native disclosures and static anchor overviews provide progressive fallback without JavaScript; that fallback was inspected in source, not tested with browser JavaScript disabled.
+Provider responses were simulated; these tests do not establish live inbox delivery.
 
-## Scope and remaining setup
+1. Required fields prevent requests and produce a focused, linked error summary.
+2. Invalid email and short messages are rejected.
+3. Accepted submissions use the correct primary endpoint, CC and visitor Reply-To, then reset the form.
+4. Activation-required responses preserve entries and explain the next step.
+5. Provider rejection preserves entries and restores the button.
+6. Network failure retains the full message.
+7. Repeated clicks while sending produce only one request.
+8. A timeout does not claim delivery or automatically retry.
+9. A filled honeypot blocks transmission.
+10. Service starting-point buttons select the matching inquiry category and focus the name field.
 
-- QA used desktop Brave with responsive viewport simulation. Physical iOS/Android devices and Safari/Firefox were not independently tested.
-- GitHub is the initial contact destination. Replace it with a supplied business email when ready.
-- Project descriptions deliberately identify ongoing work. Abstract visuals are labeled concept illustrations and do not claim to be actual product screenshots.
-- Custom-domain DNS, ownership verification and HTTPS certificate issuance remain dependent on the domain owner's configuration. See `DEPLOYMENT.md`.
-- Canonical/social/sitemap URLs target the requested domain, so social-image fetches need that domain to be connected.
+The tests exposed malformed service option tags during implementation; the tags were corrected and all six options, including the initial prompt, are now present. The complete ten-test suite passed after the correction.
+
+## Browser and static checks
+
+- Reviewed in Brave at 320, 375, 768, 1024 and 1440 CSS pixels. Document width matched the viewport at each size; no horizontal overflow.
+- All visible inquiry inputs have associated labels. Controls retain a minimum 16px input font.
+- Empty and invalid form submissions show inline messages, focus the linked summary and do not leave the page.
+- Starting-point selection updates the real select control. Mobile menu and existing project dialogs remain functional.
+- Source project wordmarks, desktop header, mobile contact layout and inquiry states were visually reviewed.
+- JavaScript syntax check and 56 local structure/link/resource/HTTP checks passed.
+- Core solid-color text contrast ratios range from 5.57:1 to 15.50:1. This is not a full accessibility certification.
+- The site remains buildless HTML, CSS and JavaScript. No Node runtime, SMTP password or Gmail credential is required for hosting.
+- Third-party inquiry processing and the two recipients are disclosed before submission and in the privacy section.
+
+## Delivery activation and verification limits
+
+FormSubmit requires one-time recipient activation. A real test email has not been sent by the agent without the user's permission. Live inbox delivery and Reply-To behavior remain to be confirmed after activation. See `INQUIRY-SETUP.md`.
+
+Provider acceptance is kept distinct from confirmed inbox arrival. Error, timeout and activation responses retain entered text and offer the email-app fallback addressed to both recipients. Physical iOS/Android devices and Safari/Firefox were not independently tested.
