@@ -30,7 +30,7 @@ The `www` CNAME points to `scndz-development.github.io`, without `https://`, a t
 5. Check both `https://globalsoftwarestudios.com` and `https://www.globalsoftwarestudios.com`. The second should redirect to the configured root domain.
 6. Once the custom domain is active, run `python3 tools/configure_site.py --base-url https://globalsoftwarestudios.com/`, then commit and push. This updates canonical URLs, structured data, social images, robots, sitemap, the 404 home link and the form fallback return URL together. If a real `CNAME` file is present, running the script without `--base-url` uses that domain. No package installation is needed.
 
-The custom domain is configured as `globalsoftwarestudios.com` in `CNAME` and GitHub Pages settings. Namecheap has the four A records and www CNAME above, with Private Email records preserved. Canonical, social, schema, sitemap, robots and form return URLs use `https://globalsoftwarestudios.com/`. The website itself has no build step or runtime server. The optional script only edits the static source files.
+The custom domain is configured as `globalsoftwarestudios.com` in `CNAME` and GitHub Pages settings. Namecheap has the four A records and www CNAME above, with Private Email records preserved. GitHub has approved the root/www TLS certificate and HTTPS enforcement is enabled. Canonical, social, schema, sitemap, robots and form return URLs use `https://globalsoftwarestudios.com/`. The website itself has no build step or runtime server. The optional script only edits the static source files.
 
 GitHub documentation:
 - https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site

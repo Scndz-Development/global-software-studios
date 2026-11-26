@@ -68,3 +68,7 @@ Replaced Jay’s old address with jay.sterling@globalsoftwarestudios.com in AJAX
 Configured `globalsoftwarestudios.com` in CNAME and regenerated canonical, social, structured-data, sitemap, robots, 404 and inquiry return URLs. The structured-data CSP hash was refreshed. All 12 mocked inquiry checks and 87 SEO/security checks passed for the domain root deployment. DNS and HTTPS activation require separate live verification.
 
 Namecheap DNS configured: `www` CNAME points to `scndz-development.github.io`; the root has all four GitHub Pages A records (`185.199.108.153` through `185.199.111.153`). The parked URL redirect was replaced. Authoritative DNS returned all four addresses and both original Private Email MX hosts. DKIM and the Private Email configuration were preserved. GitHub Pages deployment completed; certificate issuance was still pending while GitHub’s resolver retained an older root-domain response.
+
+## HTTPS activation — 2026-11-27
+
+GitHub approved the certificate for `globalsoftwarestudios.com` and `www.globalsoftwarestudios.com`. Enabled HTTPS enforcement through the Pages API and verified `https_enforced: true`. The root HTTPS URL returned HTTP 200 with certificate verification enabled.
