@@ -26,9 +26,9 @@ A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain 
 
 The repository is configured for GitHub Pages from `main` → `/ (root)`. Any push to `main` publishes the updated static files. There are no npm commands to run.
 
-Temporary URL: https://scndz-development.github.io/global-software-studios/
+Website: https://globalsoftwarestudios.com/
 
-The repository is owned by **Scndz-Development**, with its original history preserved. The custom domain is deliberately not activated until DNS is ready, so the GitHub Pages preview stays usable. Follow `DEPLOYMENT.md` to connect it.
+The repository is owned by **Scndz-Development**, with its original history preserved. GitHub Pages uses the custom domain in `CNAME`; see `DEPLOYMENT.md` for DNS records and HTTPS configuration.
 
 ## Editing content
 
