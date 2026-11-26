@@ -1,4 +1,4 @@
-# Global Software Solutions Studio
+# Global Software Solution
 
 A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain HTML, CSS and JavaScript; no Node.js, package installation, database, server or build step is needed for hosting.
 
@@ -7,7 +7,11 @@ A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain 
 - `index.html` — studio home, portfolio, services, process, FAQ and contact.
 - `styles.css` — responsive layouts, focus states, reduced-motion and print styles.
 - `script.js` — mobile navigation, accessible project dialogs and inquiry validation/delivery.
-- `credits.html` — photography/font attribution and privacy information.
+- `credits.html` — photography/font attribution.
+- `terms.html` and `privacy.html` — website terms, inquiry data handling and contact details.
+- `site.json` and `tools/configure_site.py` — optional standard-library helper to update static metadata after a domain change.
+- `SECURITY.md` — implemented defenses, hosting limits and reporting contact.
+- `SEO.md` — indexing configuration and custom-domain migration.
 - `404.html` — custom not-found page.
 - `thank-you.html` — fallback confirmation page after FormSubmit accepts an HTML form submission.
 - `INQUIRY-SETUP.md` — recipients, provider activation and delivery checks.
@@ -22,9 +26,9 @@ A responsive, buildless studio website for **GlobalSoftwareStudios.com**. Plain 
 
 The repository is configured for GitHub Pages from `main` → `/ (root)`. Any push to `main` publishes the updated static files. There are no npm commands to run.
 
-Temporary URL: https://knightndgale.github.io/global-software-studios/
+Temporary URL: https://scndz-development.github.io/global-software-studios/
 
-The custom domain is deliberately not activated until DNS is ready, so the GitHub Pages preview stays usable. Follow `DEPLOYMENT.md` to connect it.
+The repository is owned by **Scndz-Development**, with its original history preserved. The custom domain is deliberately not activated until DNS is ready, so the GitHub Pages preview stays usable. Follow `DEPLOYMENT.md` to connect it.
 
 ## Editing content
 

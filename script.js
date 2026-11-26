@@ -123,12 +123,15 @@
     name: form.elements.namedItem('name'),
     email: form.elements.namedItem('email'),
     service: form.elements.namedItem('service'),
-    message: form.elements.namedItem('message')
+    message: form.elements.namedItem('message'),
+    consent: form.elements.namedItem('consent')
   };
   let sending = false;
   const errorFor = (name) => {
     const field = fields[name];
+    if (name === 'consent') return field.checked ? '' : 'Please agree to the website terms and acknowledge the privacy notice.';
     const value = field.value.trim();
+    if (field.maxLength > 0 && value.length > field.maxLength) return 'Please shorten this field to the stated limit.';
     if (!value) return {name:'Enter your name.',email:'Enter your email address.',service:'Choose the support you need.',message:'Tell us a little about your project.'}[name];
     if (name === 'email' && !field.validity.valid) return 'Enter a valid email address, such as name@example.com.';
     if (name === 'message' && value.length < 20) return 'Add a little more detail (at least 20 characters).';
@@ -189,10 +192,16 @@
       showFeedback('error', 'This request could not be processed. Please use the email link to contact us.');
       return;
     }
-    const data = Object.fromEntries(new FormData(form).entries());
-    Object.keys(fields).forEach(name => {data[name] = fields[name].value.trim();});
-    data._replyto = data.email;
-    data._url = location.href.split('#')[0];
+    // Allowlist fields; never accept extra delivery controls injected into the DOM.
+    const data = {
+      name:fields.name.value.trim(),email:fields.email.value.trim(),
+      company:form.elements.namedItem('company').value.trim().slice(0,150),
+      service:fields.service.value,message:fields.message.value.trim(),
+      consent:'accepted',terms_version:'2026-11-26',
+      _cc:'jay.sterling@mail.com',_subject:'New project inquiry — Global Software Solution',
+      _template:'table',_honey:'',_replyto:fields.email.value.trim(),
+      _url:location.origin + location.pathname
+    };
     sending = true;
     submit.disabled = true;
     submit.textContent = 'Sending inquiry…';
@@ -202,7 +211,8 @@
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
       const response = await fetch('https://formsubmit.co/ajax/knightndgale@gmail.com', {
-        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        method:'POST',credentials:'omit',cache:'no-store',redirect:'error',referrerPolicy:'no-referrer',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(data),signal:controller.signal
       });
       const result = await response.json();

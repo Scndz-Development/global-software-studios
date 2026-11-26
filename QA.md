@@ -2,7 +2,7 @@
 
 ## Branding and project assets
 
-- Business name updated to **Global Software Solutions Studio** across the header, footer, page titles, metadata, social share image, brief and documentation. The supplied `globalsoftwarestudios.com` domain and existing GitHub repository are retained.
+- Business name updated to **Global Software Solution** across the header, footer, page titles, metadata, social share image, brief and documentation. The supplied `globalsoftwarestudios.com` domain and existing GitHub repository are retained.
 - Removed the invented company icon and hero monogram. The business name is presented as plain text.
 - PNTZE uses its supplied pink-terminal wordmark exported from the existing design reference, without redrawing the lettering.
 - SCNDZ uses the application source's stacked SC / ND / Z wordmark, orange dot and Oswald typeface. CFS has no separate logo artwork in the available source and remains a text identifier.
@@ -42,3 +42,15 @@ The tests exposed malformed service option tags during implementation; the tags 
 FormSubmit requires one-time recipient activation. A real test email has not been sent by the agent without the user's permission. Live inbox delivery and Reply-To behavior remain to be confirmed after activation. See `INQUIRY-SETUP.md`.
 
 Provider acceptance is kept distinct from confirmed inbox arrival. Error, timeout and activation responses retain entered text and offer the email-app fallback addressed to both recipients. Physical iOS/Android devices and Safari/Firefox were not independently tested.
+
+## Organization, terms, SEO and security update
+
+- Renamed the business to **Global Software Solution** and transferred the same repository (numeric ID 1472933663) to **Scndz-Development** with its original history preserved.
+- Added website-use terms, a separate privacy notice, footer links and required inquiry agreement acknowledgment with version `2026-11-26`. No jurisdiction or legal-entity details were invented. Paid project agreements remain separate.
+- Twelve inquiry tests pass, adding mandatory agreement and an injected-delivery-control/query-stripping test to the earlier suite. All provider responses are simulated; no live email test was sent.
+- Canonical, Open Graph, Twitter, JSON-LD, sitemap, robots and fallback URLs now target the organization's actual live Pages base. The optional metadata helper updates all related files together after a future custom-domain change.
+- Eighty-two SEO/security structure and history checks passed before final documentation updates: CSP directives and JSON-LD hash, canonical consistency, no inline handlers/CSS, no unapproved runtime scripts, safe text rendering, mandatory consent, expected recipients and a common-credential-pattern scan of both existing commits.
+- Ninety-two local HTML/asset/link/HTTP checks passed before final documentation updates. Core solid-color text contrast checks remain above AA minimums for the tested pairs.
+- In Brave, scripts and inquiry validation work under the new CSP. An empty inquiry reports five required-field errors, including agreement, without a request. The terms page renders and navigation works; no site-origin console warnings/errors were returned in that check.
+- GitHub API readback confirms HTTPS enforcement, secret scanning, push protection, dependency vulnerability alerts/updates and protected `main` with force-push/deletion blocking and admin enforcement.
+- GitHub Pages response-header limitations and provider activation/inbox-delivery limits are documented in `SECURITY.md` and `INQUIRY-SETUP.md`. These checks do not establish immunity to compromise or replace a penetration test.
