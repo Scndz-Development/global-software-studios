@@ -54,3 +54,7 @@ Provider acceptance is kept distinct from confirmed inbox arrival. Error, timeou
 - In Brave, scripts and inquiry validation work under the new CSP. An empty inquiry reports five required-field errors, including agreement, without a request. The terms page renders and navigation works; no site-origin console warnings/errors were returned in that check.
 - GitHub API readback confirms HTTPS enforcement, secret scanning, push protection, dependency vulnerability alerts/updates and protected `main` with force-push/deletion blocking and admin enforcement.
 - GitHub Pages response-header limitations and provider activation/inbox-delivery limits are documented in `SECURITY.md` and `INQUIRY-SETUP.md`. These checks do not establish immunity to compromise or replace a penetration test.
+
+## PNTZE logo presentation refinement
+
+Removed the pink card background and inset white badge. The logo now sits centered on a single white surface, with clear space and its original aspect ratio. The source PNG is unchanged. Verified in Brave on desktop and at 375px: no horizontal overflow, transparent wrapper background, loaded asset and zero horizontal/vertical center offset.
