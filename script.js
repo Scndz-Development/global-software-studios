@@ -197,7 +197,7 @@
       name:fields.name.value.trim(),email:fields.email.value.trim(),
       company:form.elements.namedItem('company').value.trim().slice(0,150),
       service:fields.service.value,message:fields.message.value.trim(),
-      consent:'accepted',terms_version:'2026-11-26',
+      consent:'accepted',terms_version:'2026-06',
       _cc:'jay.sterling@globalsoftwarestudios.com',_subject:'New project inquiry — Global Software Solution',
       _template:'table',_honey:'',_replyto:fields.email.value.trim(),
       _url:location.origin + location.pathname
@@ -222,7 +222,7 @@
       }
       if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('service');
       form.reset();
-      showFeedback('success', 'Thank you. Your inquiry has been accepted by our email service for Knight and Jay. We’ll reply to the email address you provided.');
+      showFeedback('success', 'Thank you. Your inquiry has been accepted. Our team will reply to the email address you provided.');
     } catch (error) {
       showFeedback('error', error.name === 'AbortError'
         ? 'The email service took too long to respond, so delivery could not be confirmed. Your details are still here. Please email the studio directly, or try again later.'

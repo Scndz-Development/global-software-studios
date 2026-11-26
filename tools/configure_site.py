@@ -28,9 +28,9 @@ description='Global Software Solution helps founders and teams with software dev
 pages={
  'index.html':(name+' | Software Development & UI/UX',description,True),
  'terms.html':('Website Terms | '+name,'Read the website terms for Global Software Solution, including project inquiries, acceptable use, intellectual property and your rights.',True),
- 'privacy.html':('Privacy Notice | '+name,'How Global Software Solution handles project inquiries, contact information, email delivery, privacy requests and third-party providers.',True),
- 'credits.html':('Credits | '+name,'Photography, font licenses and project wordmark attribution for the Global Software Solution website.',True),
- 'thank-you.html':('Inquiry Submitted | '+name,'Your project inquiry has been accepted by the email service. Return to Global Software Solution or contact Mark and Jay directly.',False),
+ 'privacy.html':('Privacy Notice | '+name,'How Global Software Solution handles project inquiries, form submissions, automatic archiving and privacy requests.',True),
+ 'credits.html':('Credits | '+name,'Photography credits and font licenses for the Global Software Solution website.',True),
+ 'thank-you.html':('Inquiry Submitted | '+name,'Your project inquiry has been submitted. Return to Global Software Solution or contact our team directly.',False),
  '404.html':('Page Not Found | '+name,'The requested page could not be found. Return to the Global Software Solution website.',False)
 }
 for filename,(title,desc,indexable) in pages.items():

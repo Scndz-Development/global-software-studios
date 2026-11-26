@@ -86,3 +86,7 @@ Added a root multi-size favicon.ico (16/32/48), explicit 16/32px PNG favicon lin
 ## Footer hierarchy refinement — 2026-11-27
 
 Replaced the repeated full-width footer rows with a three-column brand/contact/address grid and one compact copyright/legal row on all five pages with footers. Mobile stacks those sections and keeps project/email actions together. Removed the requested receiver sentence below the form submit button. Verified the desktop and 375px mobile layouts in Brave, including the smaller navigation mark and loaded tab favicon; saved screenshots. The Start a project link navigated to the contact section. Browser console messages were extension warnings and blocked local DevTools discovery requests; no application-code error was observed. Temporary device emulation and DevTools were closed after QA.
+
+## Public copy cleanup — 2026-11-27
+
+Removed all View on map links, the brief download link and its FAQ reference, the hero photo credit line, hero service footnote and the Project identities section on Credits. Photography/font license attribution remains on Credits. Terms display Effective June 2026, Version 2026-06; both native and AJAX submissions send that matching terms version. Inquiry, consent, confirmation and privacy copy refer to the team and form. The privacy notice describes automatic submission archiving without naming vendors or promising a fixed retention period. Form delivery endpoints and both recipients are unchanged.
